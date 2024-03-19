@@ -954,8 +954,6 @@ The script itself is also stored on the file system with a default size of 8192 
 `flx(fname)` create download link for file (x=1 or 2) fname = file name of file to download  
 `fsm` return 1 if filesystem is mounted, (valid SD card found)  
 `res=fsi(sel)` gets file system information, sel=0 returns total media size, sel=1 returns free space both in kB   
-`fra(array fr)` reads array from open file with fr (assumes tab delimited entries)  
-`fwa(array fr (a))` writes array to open file with fr (writes tab delimited entries and line feed at end) the optional a parameter ommits the linefeed for appending arrays   
 `fz(fr)` returns file size  
 `fa(fr)` returns number of available bytes in open file stream  
 `fs(fr pos)` seek to file position pos  
@@ -976,7 +974,9 @@ The script itself is also stored on the file system with a default size of 8192 
 **Extended commands**   (+0,9k flash)  
 `#define USE_SCRIPT_FATFS_EXT`  
 `fmd("fname")` make directory fname  
-`frd("fname")` remove directory fname  
+`frd("fname")` remove directory fname    
+`fra(array fr)` reads array from open file with fr (assumes tab delimited entries)  
+`fwa(array fr (a))` writes array to open file with fr (writes tab delimited entries and line feed at end) the optional a parameter ommits the linefeed for appending arrays   
 `fx("fname")` check if file fname exists  
 `fe("fname")` execute script fname (max 2048 bytes, script must start with the '>' character on the first line)  
 `lfw("fname" payload limit)` logs a string (payload) to a file (fname) with size limit (limit)  paylyoad is added to end of file together with a LF character. if file size is exceeded first line of file is removed.   
